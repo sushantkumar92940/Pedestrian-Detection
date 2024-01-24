@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11",
+                "-Wall",
+                "-I/path/to/glew/include",
+                "-I/path/to/glfw/include",
+                "-L/path/to/glew/lib",
+                "-L/path/to/glfw/lib",
+                "-lGLEW",
+                "-lglfw3",
+                "-framework Cocoa",
+                "-framework OpenGL",
+                "-framework IOKit",
+                "-framework CoreVideo",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+
